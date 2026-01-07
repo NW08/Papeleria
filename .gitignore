@@ -1,0 +1,14 @@
+/vendor/
+.env
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Sistema Operativo
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
