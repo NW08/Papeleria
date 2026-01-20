@@ -1,17 +1,12 @@
--- =============================================
 -- CREACIÓN DE LA BASE DE DATOS
--- =============================================
 CREATE DATABASE papeleria;
 GO
 
 USE papeleria;
 GO
 
--- =============================================
 -- TABLAS DE SEGURIDAD Y USUARIOS
--- =============================================
-
--- Tabla para almacenar los tipos de roles (ej. Admin, Vendedor)
+-- Tabla para almacenar los tipos de roles
 CREATE TABLE rol
 (
     id_rol INT IDENTITY (1,1) PRIMARY KEY,
@@ -41,10 +36,7 @@ CREATE TABLE empleado
 );
 GO
 
--- =============================================
 -- TABLAS DE PERSONAS EXTERNAS
--- =============================================
-
 -- Tabla de clientes que compran en la papelería
 CREATE TABLE cliente
 (
@@ -64,11 +56,8 @@ CREATE TABLE proveedor
 );
 GO
 
--- =============================================
 -- TABLAS DE INVENTARIO
--- =============================================
-
--- Categorías de los productos (ej. Cuadernos, Lápices)
+-- Categorías de los productos
 CREATE TABLE categoria
 (
     id_categoria INT IDENTITY (1,1) PRIMARY KEY,
@@ -90,11 +79,8 @@ CREATE TABLE producto
 );
 GO
 
--- =============================================
 -- TABLAS TRANSACCIONALES (VENTAS)
--- =============================================
-
--- Catálogo de formas de pago (ej. Efectivo, Tarjeta)
+-- Catálogo de formas de pago
 CREATE TABLE forma_pago
 (
     id_forma_pago INT IDENTITY (1,1) PRIMARY KEY,
@@ -102,7 +88,7 @@ CREATE TABLE forma_pago
 );
 GO
 
--- Estados posibles de una venta (ej. Completada, Cancelada)
+-- Estados posibles de una venta
 CREATE TABLE estado_venta
 (
     id_estado INT IDENTITY (1,1) PRIMARY KEY,
@@ -110,7 +96,7 @@ CREATE TABLE estado_venta
 );
 GO
 
--- Cabecera de la venta (información general)
+-- Tabla para guardas las ventas realizadas
 CREATE TABLE venta
 (
     id_venta      INT IDENTITY (1,1) PRIMARY KEY,
@@ -142,11 +128,8 @@ CREATE TABLE detalle_venta
 );
 GO
 
--- =============================================
 -- TABLAS TRANSACCIONALES (COMPRAS)
--- =============================================
-
--- Cabecera de compras a proveedores (reabastecimiento)
+-- Cabecera de compras a proveedores
 CREATE TABLE compra
 (
     id_compra    INT IDENTITY (1,1) PRIMARY KEY,
