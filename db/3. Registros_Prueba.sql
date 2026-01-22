@@ -41,7 +41,9 @@ GO
 INSERT INTO rol (nombre, descripcion)
 VALUES ('Administrador', 'Puede administrar el sistema'),
        ('Vendedor', 'Puede realizar ventas'),
-       ('Asistente', 'Puede realizar compras');
+       ('Asistente', 'Apoya al vendedor en su trabajo'),
+       ('Proveedor', 'Puede proveer recursos y material'),
+       ('Cliente', 'Puede realizar compras');
 GO
 
 -- Tabla Usuario
