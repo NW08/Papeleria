@@ -202,3 +202,12 @@ CREATE TABLE detalle_compra
             REFERENCES producto (id_producto)
 );
 GO
+
+-- Verificación de restricciones en cada tabla.
+SELECT t.name      AS Tabla,
+       c.name      AS Restriccion,
+       c.type_desc AS Descripcion
+FROM sys.objects c
+         JOIN sys.tables t ON c.parent_object_id = t.object_id
+WHERE c.type IN ('PK', 'UQ', 'C', 'F')
+ORDER BY t.name;
