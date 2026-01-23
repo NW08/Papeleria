@@ -3,13 +3,13 @@ declare(strict_types=1);
 session_start();
 
 // 1. CORRECCIÓN DE RUTAS
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 use Dotenv\Dotenv;
 use Jossu\Bdd\Database;
 
 // 2. Cargar variables de entorno apuntando a la raíz del proyecto
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->safeLoad();
 
 $error = null;
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_regenerate_id(true);
 
             // Redirigir al dashboard (ajusta la ruta si index.php está en la raíz)
-            header('Location: ../index.php');
+            header('Location: ../../index.php');
             exit();
 
         } else {
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso Papelería</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
 

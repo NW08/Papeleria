@@ -60,7 +60,7 @@ $roles = $roles_stmt->fetchAll(PDO::FETCH_ASSOC);
 </header>
 <nav>
     <a href="index.php">Inicio</a>
-    <a href="logout.php">Cerrar sesión</a>
+    <a href="auth/logout.php">Cerrar sesión</a>
 </nav>
 <main>
     <h2>Registrar Usuario</h2>

@@ -49,7 +49,7 @@ $formas_pago = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </header>
 <nav>
     <a href="index.php">Inicio</a>
-    <a href="logout.php">Cerrar sesión</a>
+    <a href="auth/logout.php">Cerrar sesión</a>
 </nav>
 <main>
     <h2>Agregar Método de Pago</h2>

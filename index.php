@@ -22,7 +22,7 @@ try {
 // 4. Lógica de sesión original
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    header('Location: src/login.php');
+    header('Location: src/auth/login.php');
     exit();
 }
 ?>
@@ -47,14 +47,14 @@ if (!isset($_SESSION['usuario'])) {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
             </svg>
-            <h3>Papelería <span style="font-weight:400">Control</span></h3>
+            <h3>PANEL</h3>
         </div>
 
         <nav class="sidebar-nav">
             <ul>
                 <li class="nav-label">Gestión Principal</li>
-                <li><a href="src/ventas.php"><span class="icon">🛒</span> Ventas</a></li>
-                <li><a href="src/productos.php"><span class="icon">📦</span> Productos</a></li>
+                <li><a href="src/management/ventas/ventas.php"><span class="icon">🛒</span> Ventas</a></li>
+                <li><a href="src/management/productos.php"><span class="icon">📦</span> Productos</a></li>
                 <li><a href="src/clientes.php"><span class="icon">👥</span> Clientes</a></li>
 
                 <li class="nav-label">Inventario y Compras</li>
@@ -71,7 +71,7 @@ if (!isset($_SESSION['usuario'])) {
         </nav>
 
         <div class="sidebar-footer">
-            <a href="src/logout.php" class="logout-btn">
+            <a href="src/auth/logout.php" class="logout-btn">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
