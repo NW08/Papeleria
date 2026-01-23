@@ -1,70 +1,430 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reseteo básico y variables */
+:root {
+    --bg-color: #f0f2f5; /* Gris muy suave (papel reciclado) */
+    --card-bg: #ffffff; /* Blanco puro */
+    --primary: #2c3e50; /* Azul 'tinta' oscuro */
+    --primary-hover: #34495e; /* Un tono más claro para hover */
+    --accent: #3498db; /* Azul brillante para foco */
+    --text-main: #333333; /* Gris casi negro para texto */
+    --text-muted: #888888;
+    --border-color: #e0e0e0;
+    --error-bg: #fff5f5;
+    --error-text: #e74c3c;
+    --radius: 8px; /* Bordes ligeramente redondeados */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
-    background: #f4f4f4;
+    padding: 0;
 }
 
-header {
-    background: #2c3e50;
-    color: white;
-    padding: 15px;
-    text-align: center;
+body {
+    font-family: 'Inter', sans-serif; /* Tipografía limpia y moderna */
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-nav {
-    width: 200px;
-    background: #34495e;
-    position: fixed;
-    height: 100%;
-    padding-top: 20px;
-}
-
-nav a {
-    display: block;
-    color: white;
-    padding: 12px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background: #1abc9c;
-}
-
-main {
-    margin-left: 210px;
+/* Contenedor principal centrado */
+.login-wrapper {
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+.login-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.02); /* Borde sutil */
+    text-align: center;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+/* Cabecera */
+.login-header {
+    margin-bottom: 30px;
 }
 
-th, td {
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.login-header h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Alertas de error */
+.alert {
+    background-color: var(--error-bg);
+    color: var(--error-text);
     padding: 10px;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 20px;
     text-align: left;
 }
 
-th {
-    background: #2c3e50;
-    color: white;
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
 }
 
-button {
-    padding: 5px 10px;
-    margin: 2px;
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Botón */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 30px;
+    font-size: 0.75rem;
+    color: #bbb;
+}
+
+/* Wrapper para posicionar el ojo */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Ajustamos el input de contraseña para que el texto no choque con el ojo */
+.password-wrapper input {
+    padding-right: 45px; /* Espacio extra a la derecha */
+}
+
+/* Botón del ojo */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical exacto */
+    background: none;
     border: none;
     cursor: pointer;
-    background: #1abc9c;
-    color: white;
-    border-radius: 3px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted); /* Gris suave */
+    transition: color 0.2s ease;
 }
 
-button:hover {
-    background: #16a085;
+.toggle-password:hover {
+    color: var(--primary); /* Se oscurece al pasar el mouse */
+}
+
+.eye-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Clase utilitaria para ocultar iconos */
+.hidden {
+    display: none;
+}
+
+/* =========================================
+   ESTILOS DEL DASHBOARD
+   ========================================= */
+
+/* Layout general */
+.dashboard-body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: block; /* Sobreescribimos el flex del login */
+    overflow: hidden; /* Evitamos scroll en el body, scrollable el contenido */
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- SIDEBAR (Barra Lateral) --- */
+.sidebar {
+    width: 260px;
+    background-color: #fff;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 0 25px 30px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+}
+
+.brand-icon-small {
+    width: 24px;
+    height: 24px;
+}
+
+/* Navegación */
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 15px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.nav-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin: 20px 0 10px 10px;
+    font-weight: 600;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--bg-color);
+    color: var(--primary);
+}
+
+.sidebar-nav .icon {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    /* Si usas emojis como iconos, esto está bien.
+       Si usas SVGs, ajusta width/height */
+}
+
+.sidebar-footer {
+    padding: 20px 25px 0 25px;
+    border-top: 1px solid var(--border-color);
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--error-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.logout-btn:hover {
+    opacity: 0.8;
+}
+
+.logout-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* --- MAIN CONTENT (Contenido Principal) --- */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px 40px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.user-welcome h2 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.date-display {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* --- INDICADOR DE ESTADO DE BASE DE DATOS (El requerimiento especial) --- */
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 50px; /* Forma de píldora */
+    border: 1px solid rgba(46, 204, 113, 0.2); /* Borde verde muy sutil */
+    box-shadow: 0 2px 10px rgba(46, 204, 113, 0.1);
+}
+
+.status-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.status-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #27ae60; /* Verde profesional */
+}
+
+/* Animación del punto verde */
+.status-dot-container {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.status-ping {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    opacity: 0.75;
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Panel de Bienvenida vacío */
+.content-panel {
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Estilo del botón de cerrar sesión */
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    /* Estado inicial: Fondo rojo muy suave y texto rojo */
+    background-color: #fff5f5;
+    color: #e74c3c;
+
+    padding: 12px 15px; /* Un poco de relleno para que parezca botón */
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    /* Transición suave para el efecto hover */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.logout-btn:hover {
+    /* Se oscurece a un rojo sólido */
+    background-color: #c0392b;
+    /* El texto cambia a blanco para buen contraste */
+    color: white;
+    /* Pequeño desplazamiento para efecto táctil */
+    transform: translateX(3px);
+}
+
+.logout-btn svg {
+    width: 20px;
+    height: 20px;
 }
