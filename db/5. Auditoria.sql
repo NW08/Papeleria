@@ -219,3 +219,10 @@ SELECT *
 FROM auditoria
 ORDER BY fecha DESC;
 GO
+
+-- Se verifican los registros existentes en auditoria y auditoria_login.
+SELECT *
+FROM auditoria a;
+
+SELECT *
+FROM auditoria_login al;

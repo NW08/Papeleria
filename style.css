@@ -695,3 +695,101 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 }
+
+/* =========================================
+   EXTRAS PARA USUARIOS
+   ========================================= */
+
+/* Badges para Roles */
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.role-admin {
+    background-color: #e8f0fe;
+    color: #1967d2; /* Azul Google */
+    border: 1px solid rgba(25, 103, 210, 0.2);
+}
+
+.role-staff {
+    background-color: #f3f4f6;
+    color: #4b5563; /* Gris profesional */
+    border: 1px solid #e5e7eb;
+}
+
+/* Botón de eliminar (pequeño y rojo) */
+.btn-danger-ghost {
+    background: transparent;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none; /* Importante porque es un tag <a> */
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.btn-danger-ghost:hover {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+/* =========================================
+   EXTRAS PARA EMPLEADOS
+   ========================================= */
+
+/* Badge de Estado de Usuario (Píldora con punto) */
+.user-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Estado: Vinculado / Activo */
+.status-linked {
+    background-color: #ecfdf5; /* Verde menta muy claro */
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+/* Estado: Sin Acceso / Desvinculado */
+.status-unlinked {
+    background-color: #f3f4f6; /* Gris */
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+/* El punto de color */
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-green {
+    background-color: #10b981;
+}
+
+.dot-gray {
+    background-color: #9ca3af;
+}
+
+/* Texto pequeño de ayuda en formularios */
+.form-help-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+    display: block;
+}

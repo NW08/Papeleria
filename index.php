@@ -36,6 +36,7 @@ if (!isset($_SESSION['usuario'])) {
     <title>Panel Administrador</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="48x48" href="src/media/icon.png">
 </head>
 <body class="dashboard-body">
 
@@ -55,7 +56,7 @@ if (!isset($_SESSION['usuario'])) {
                 <li class="nav-label">Gestión Principal</li>
                 <li><a href="src/management/ventas/ventas.php"><span class="icon">🛒</span> Ventas</a></li>
                 <li><a href="src/management/productos.php"><span class="icon">📦</span> Productos</a></li>
-                <li><a href="src/clientes.php"><span class="icon">👥</span> Clientes</a></li>
+                <li><a href="src/management/clientes.php"><span class="icon">👥</span> Clientes</a></li>
 
                 <li class="nav-label">Inventario y Compras</li>
                 <li><a href="src/proveedores.php"><span class="icon">🚚</span> Proveedores</a></li>
@@ -63,10 +64,10 @@ if (!isset($_SESSION['usuario'])) {
                 <li><a href="src/categorias.php"><span class="icon">🏷️</span> Categorías</a></li>
 
                 <li class="nav-label">Configuración</li>
-                <li><a href="src/usuarios.php"><span class="icon">🔐</span> Usuarios</a></li>
-                <li><a href="src/empleados.php"><span class="icon">👔</span> Empleados</a></li>
-                <li><a href="src/forma_pago.php"><span class="icon">💳</span> Forma de Pago</a></li>
-                <li><a href="src/estado_venta.php"><span class="icon">📊</span> Estado Venta</a></li>
+                <li><a href="src/settings/users/usuarios.php"><span class="icon">🔐</span> Usuarios</a></li>
+                <li><a href="src/settings/users/employees.php"><span class="icon">👔</span> Empleados</a></li>
+                <li><a href="src/settings/forma_pago.php"><span class="icon">💳</span> Forma de Pago</a></li>
+                <li><a href="src/settings/estado_venta.php"><span class="icon">📊</span> Estado Venta</a></li>
             </ul>
         </nav>
 

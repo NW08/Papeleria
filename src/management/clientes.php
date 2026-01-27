@@ -11,8 +11,8 @@ use Jossu\Bdd\Database;
 
 // 2. Seguridad
 if (!isset($_SESSION['usuario'])) {
-   header('Location: auth/login.php');
-   exit();
+    header('Location: auth/login.php');
+    exit();
 }
 
 // 3. Configuración
@@ -24,9 +24,9 @@ $error = null;
 
 // 4. Lógica de Datos
 try {
-   $pdo = Database::getConnection();
+    $pdo = Database::getConnection();
 
-   $sql = '
+    $sql = '
         SELECT 
             id_cliente, 
             nombre, 
@@ -37,12 +37,12 @@ try {
         ORDER BY apellido, nombre
     ';
 
-   $stmt = $pdo->query($sql);
-   $clientes = $stmt->fetchAll();
+    $stmt = $pdo->query($sql);
+    $clientes = $stmt->fetchAll();
 
 } catch (Exception $e) {
-   error_log('Error Clientes: ' . $e->getMessage());
-   $error = 'Error al cargar la lista de clientes.';
+    error_log('Error Clientes: ' . $e->getMessage());
+    $error = 'Error al cargar la lista de clientes.';
 }
 ?>
 
@@ -54,6 +54,8 @@ try {
     <title>Gestión de Clientes</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" sizes="48x48" href="../media/icon.png">
+
 </head>
 <body class="dashboard-body">
 
@@ -115,11 +117,11 @@ try {
             </div>
         </header>
 
-       <?php if (isset($error) && $error): ?>
-           <div class="alert alert-error">
-              <?php echo htmlspecialchars($error); ?>
-           </div>
-       <?php endif; ?>
+        <?php if (isset($error) && $error): ?>
+            <div class="alert alert-error">
+                <?php echo htmlspecialchars($error); ?>
+            </div>
+        <?php endif; ?>
 
         <div class="table-container">
             <table class="styled-table">
@@ -134,22 +136,22 @@ try {
                 </thead>
                 <tbody>
                 <?php if (!empty($clientes)): ?>
-                   <?php foreach ($clientes as $c): ?>
+                    <?php foreach ($clientes as $c): ?>
                         <tr>
                             <td class="text-mono"><?php echo htmlspecialchars((string)$c['id_cliente']); ?></td>
 
                             <td style="font-weight: 500; color: var(--primary);">
-                               <?php echo htmlspecialchars($c['nombre'] . ' ' . $c['apellido']); ?>
+                                <?php echo htmlspecialchars($c['nombre'] . ' ' . $c['apellido']); ?>
                             </td>
 
                             <td>
-                               <?php if (!empty($c['email'])): ?>
-                                   <span style="color: var(--text-main);"><?php echo htmlspecialchars($c['email']); ?></span>
-                               <?php else: ?>
-                                   <span style="background:#f0f2f5; color:#999; padding:2px 6px; border-radius:4px; font-size:0.8rem;">
+                                <?php if (!empty($c['email'])): ?>
+                                    <span style="color: var(--text-main);"><?php echo htmlspecialchars($c['email']); ?></span>
+                                <?php else: ?>
+                                    <span style="background:#f0f2f5; color:#999; padding:2px 6px; border-radius:4px; font-size:0.8rem;">
                                         No disponible / Cifrado
                                     </span>
-                               <?php endif; ?>
+                                <?php endif; ?>
                             </td>
 
                             <td><?php echo htmlspecialchars($c['telefono'] ?? '---'); ?></td>
@@ -160,7 +162,7 @@ try {
                                 </button>
                             </td>
                         </tr>
-                   <?php endforeach; ?>
+                    <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
                         <td colspan="5" style="text-align:center; padding:30px;">No hay clientes registrados.</td>

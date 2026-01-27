@@ -67,6 +67,7 @@ try {
     <title>Listado de Ventas</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../style.css">
+    <link rel="icon" type="image/png" sizes="48x48" href="../../media/icon.png">
 </head>
 <body class="dashboard-body">
 
@@ -96,9 +97,9 @@ try {
                 <li><a href="categorias.php"><span class="icon">🏷️</span> Categorías</a></li>
 
                 <li class="nav-label">Configuración</li>
-                <li><a href="../../usuarios.php"><span class="icon">🔐</span> Usuarios</a></li>
+                <li><a href="../../settings/users/usuarios.php"><span class="icon">🔐</span> Usuarios</a></li>
                 <li><a href="empleados.php"><span class="icon">👔</span> Empleados</a></li>
-                <li><a href="../../forma_pago.php"><span class="icon">💳</span> Forma de Pago</a></li>
+                <li><a href="../../settings/forma_pago.php"><span class="icon">💳</span> Forma de Pago</a></li>
                 <li><a href="estado_venta.php"><span class="icon">📊</span> Estado Venta</a></li>
             </ul>
         </nav>
@@ -404,7 +405,7 @@ try {
         };
 
         try {
-            const respuesta = await fetch('crear_venta.php', { // Ajusta la ruta a tu API
+            const respuesta = await fetch('crear_venta.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(datos)

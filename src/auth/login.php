@@ -67,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Acceso Papelería</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" sizes="48x48" href="../media/icon.png">
 </head>
 <body>
 
