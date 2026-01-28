@@ -96,7 +96,7 @@ Ejecuta los scripts ubicados en la carpeta `/sql` en el siguiente **orden estric
 
 ```bash
 # Clonar el repositorio
-git clone [https://github.com/tu-usuario/papeleria-system.git](https://github.com/tu-usuario/papeleria-system.git)
+git clone [https://github.com/NW08/Papeleria.git](https://github.com/NW08/Papeleria.git)
 
 # Instalar dependencias
 composer install
@@ -123,8 +123,8 @@ DB_ENCRYPT = false  # Cambiar a true en producción
 
 ## 🔗 Enlaces de Producción
 
-* **Sitio Web:** [https://www.papeleria-demo-produccion.com](https://example.com)
-* **Servidor BD:** `sql.papeleria-demo-produccion.com` (Acceso vía VPN/Whitelisting)
+* **Sitio Web:** [Papeleria Web](https://proyectopapeleria.netlify.app/)
+* **Servidor BD:** `https://backendpa-fberakfyghggddhk.westus3-01.azurewebsites.net/` (BDD - Azure)
 
 ---
 
