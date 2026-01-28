@@ -113,7 +113,8 @@ OPEN SYMMETRIC KEY ClaveAES_Paper DECRYPTION BY CERTIFICATE CertPaper;
 
 -- Insertamos un cliente de prueba cifrado
 INSERT INTO cliente (nombre, apellido, email_cifrado, telefono)
-VALUES ('Maria', 'Lopez', EncryptByKey(Key_Guid('ClaveAES_Paper'), 'maria.lopez@gmail.com'), '0987654321');
+VALUES ('Maria', 'Lopez', EncryptByKey(Key_Guid('ClaveAES_Paper'), 'maria.lopez@gmail.com'),
+        '0987654321');
 
 CLOSE SYMMETRIC KEY ClaveAES_Paper;
 GO
