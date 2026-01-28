@@ -3,7 +3,6 @@
 ![Estado](https://img.shields.io/badge/Estado-Producción-2c3e50?style=flat-square)
 ![PHP](https://img.shields.io/badge/Backend-PHP_8.2-777BB4?style=flat-square)
 ![SQL Server](https://img.shields.io/badge/Database-SQL_Server-CC2927?style=flat-square)
-![License](https://img.shields.io/badge/Licencia-MIT-green?style=flat-square)
 
 Un sistema robusto y escalable diseñado para la administración completa de una papelería. El proyecto combina una arquitectura de base de
 datos de alta seguridad con una aplicación web, garantizando integridad transaccional, auditoría y una experiencia de usuario fluida.
