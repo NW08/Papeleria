@@ -13,7 +13,7 @@ datos de alta seguridad con una aplicación web, garantizando integridad transac
 
 Mira el funcionamiento del sistema, la arquitectura de seguridad y el flujo de ventas en el siguiente video:
 
-[![Video Demo del Sistema](https://img.youtube.com/vi/VIDEO_ID_AQUI/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID_AQUI)
+[![Video Demo del Sistema](https://img.youtube.com/vi/CN9VLUE0Tww/maxresdefault.jpg)](https://www.youtube.com/watch?v=CN9VLUE0Tww)
 
 > *Haz clic en la imagen para ver la demostración.*
 
