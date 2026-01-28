@@ -43,7 +43,6 @@ CREATE OR ALTER TRIGGER trg_productos_update
     AS
 BEGIN
     SET NOCOUNT ON;
-    -- Solo auditamos si cambia el precio o el stock (evita llenar la tabla si solo cambian descripciones)
     IF UPDATE(precio_actual) OR UPDATE(stock_actual)
         BEGIN
             INSERT INTO auditoria (table_afectada, operacion, id_registro, usuario, detalle)
@@ -130,7 +129,6 @@ END;
 GO
 
 -- 4. TRIGGERS PARA VENTAS
--- El trigger de Venta ahora audita la creación de la factura y cambios de estado.
 -- A. Trigger INSERT (Venta)
 CREATE OR ALTER TRIGGER trg_ventas_insert
     ON venta
@@ -149,7 +147,6 @@ END;
 GO
 
 -- B. Trigger UPDATE (Venta - Cambio de Estado)
--- Como no hay 'total' en la cabecera, lo más importante es auditar si anulan la venta o cambian su estado
 CREATE OR ALTER TRIGGER trg_ventas_update
     ON venta
     AFTER UPDATE

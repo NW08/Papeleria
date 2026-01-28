@@ -127,7 +127,7 @@ VALUES ('vendedor_juan', HASHBYTES('SHA2_256', 'clave123'), 2), -- Rol Vendedor
        ('cliente_pedro', HASHBYTES('SHA2_256', 'cliente123'), (SELECT id_rol FROM rol WHERE nombre = 'Cliente'));
 GO
 
--- Tabla de Auditoría (Si no existe)
+-- Tabla de Auditoría
 IF OBJECT_ID('auditoria_login', 'U') IS NULL
     BEGIN
         CREATE TABLE auditoria_login
@@ -141,7 +141,7 @@ IF OBJECT_ID('auditoria_login', 'U') IS NULL
     END
 GO
 
--- Procedimiento de Login (Sin cambios, solo se recrea)
+-- Procedimiento de Login
 CREATE OR ALTER PROCEDURE sp_validar_login @input_user VARCHAR(50),
                                            @input_pass VARCHAR(50)
 AS

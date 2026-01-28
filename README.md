@@ -35,7 +35,8 @@ Mira el funcionamiento del sistema, la arquitectura de seguridad y el flujo de v
 ### 💻 Aplicación Web (PHP Moderno)
 
 * **Arquitectura Limpia:** Uso de POO, Patrón Singleton para DB y estructura modular.
-* **Interactividad AJAX:** Carga de detalles de venta, búsqueda de productos y actualizaciones de inventario sin recargar la página (Fetch
+* **Interactividad AJAX:** Carga de detalles de venta, búsqueda de productos y actualizaciones de inventario sin recargar la página (
+  Fetch
   API).
 * **Ventas Transaccionales:** Procesamiento atómico de facturas complejas.
 
@@ -154,11 +155,11 @@ Este proyecto ha sido diseñado, desarrollado e implementado por:
 
 ### 🗝️ Credenciales - Acceso
 
-| Rol | Usuario | Contraseña |
-| --- | --- | --- |
+| Rol                   | Usuario         | Contraseña   |
+|-----------------------|-----------------|--------------|
 | **🛡️ Administrador** | `administrador` | `hash_admin` |
-| **💼 Vendedor** | `vendedor` | `hash_vend1` |
-| **📁 Asistente** | `asistente1` | `hash_alm1` |
-| **👤 Cliente** | `Daniela` | `cliente3` |
+| **💼 Vendedor**       | `vendedor`      | `hash_vend1` |
+| **📁 Asistente**      | `asistente1`    | `hash_alm1`  |
+| **👤 Cliente**        | `Daniela`       | `cliente3`   |
 
 ---
