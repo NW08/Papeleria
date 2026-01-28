@@ -125,7 +125,7 @@ DB_ENCRYPT = false  # Cambiar a true en producción
 
 * **Sitio Web:** [Papeleria Web](https://proyectopapeleria.netlify.app/)
 * **Servidor BD:** `https://backendpa-fberakfyghggddhk.westus3-01.azurewebsites.net/` (BDD - Azure)
-* **BACKEND:* [Backend - PHP](https://github.com/Josselyn-Ayo/backend-papeleria.git)
+* **BACKEND:** [Backend - PHP](https://github.com/Josselyn-Ayo/backend-papeleria.git)
 
 ---
 
